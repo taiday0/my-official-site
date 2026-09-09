@@ -221,6 +221,7 @@
                         <p class="work-desc">わたしが作ったchromiumベースのブラウザです</p>
                         <p class="work-desc">実行するときに壊れていますと出る時は、</p>
                         <a href="https://github.com/taiday0/Chropa-browser/releases/download/v1.0/Chropa.Browser.dmg" class="work-btn">ダウンロードする</a>
+                        
                         <!-- コピー対象のテキストボックスとボタン -->
 <div class="copy-box">
   <input type="text" id="copy-text" value="xattr -dr com.apple.quarantine /Applications/"Chropa Browser.app"" readonly>
@@ -250,30 +251,6 @@
 
             </div>
         </section>
-
-<!-- コピー対象のテキストボックスとボタン -->
-<div class="copy-box">
-  <input type="text" id="copy-text" value="xattr -dr com.apple.quarantine /Applications/"Chropa Browser.app"" readonly>
-  <button onclick="copyText()">コピー</button>
-</div>
-<span id="copy-message" style="margin-left: 10px; color: green;"></span>
-
-<!-- JavaScriptによるコピー処理 -->
-<script>
-  function copyText() {
-    const textInput = document.getElementById("copy-text");
-    const message = document.getElementById("copy-message");
-    
-    // テキストを選択してクリップボードにコピー
-    navigator.clipboard.writeText(textInput.value).then(() => {
-      message.innerText = "コピーしました！";
-      setTimeout(() => { message.innerText = ""; }, 2000);
-    }).catch(err => {
-      message.innerText = "コピーに失敗しました";
-    });
-  }
-</script>
-
         
         <!-- 今後の展望 -->
         <section>
