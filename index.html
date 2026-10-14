@@ -254,9 +254,31 @@
                     <div class="work-body">
                         <div class="tags"><span class="tag">macOS app</span><span class="tag">Windows exe</span></div>
                         <h3 class="work-title">break sound</h3>
-                        <p class="work-desc">このアプリは音声を破損させて実験するものです</p>
-                        <a href="https://github.com/taiday0/sound-break-app-for-macOS/releases/download/v1.0/break.sound.zip" class="work-btn">ダウンロード (macOS版)</a>
+                        <p class="work-desc">このアプリは音声を破損させて実験するものです。MacOS版は以下のコマンドを実行</p>
+                        <a href="https://github.com/taiday0/sound-break-app-for-macOS/releases/download/v2.0/BreakSound.zip" class="work-btn">ダウンロード (macOS版)</a>
                         <a href="https://github.com/taiday0/sound-break-app-for-windows/releases/download/v1.0/break-sound.exe" class="work-btn">ダウンロード (Windows版)</a>
+                                                <!-- コピー対象のテキストボックスとボタン -->
+<div class="copy-box">
+  <input type="text" id="copy-text" value="xattr -cr /Applications/BreakSound.app” readonly>
+  <button onclick="copyText()">コピー</button>
+</div>
+<span id="copy-message" style="margin-left: 10px; color: green;"></span>
+
+<!-- JavaScriptによるコピー処理 -->
+<script>
+  function copyText() {
+    const textInput = document.getElementById("copy-text");
+    const message = document.getElementById("copy-message");
+    
+    // テキストを選択してクリップボードにコピー
+    navigator.clipboard.writeText(textInput.value).then(() => {
+      message.innerText = "コピーしました！";
+      setTimeout(() => { message.innerText = ""; }, 2000);
+    }).catch(err => {
+      message.innerText = "コピーに失敗しました";
+    });
+  }
+</script>
                     </div>
                 </div>
                 
